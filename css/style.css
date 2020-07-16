@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    cursor: none;
 }
 
 *,
@@ -35,4 +36,51 @@ main,
 nav,
 section {
     display: block;
+}
+
+.cursor {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #c6c6c6;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .1s;
+}
+
+.cursorSmall {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: #c6c6c6;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .15s;
+}
+
+a{
+    margin: 0 1px;
+}
+
+a:hover{
+    text-decoration: none;
+    background-color: #e6e6e6;
+    
+    border-radius: 5px;
+}
+
+p:hover ~ .cursor {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: #c6c6c6;
+    opacity: .5;
+}
+
+p:hover ~ .cursorSmall {
+    opacity: 0;
 }
